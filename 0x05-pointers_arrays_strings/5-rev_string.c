@@ -1,26 +1,28 @@
 #include "main.h"
 
 /**
-* print_rev - prints string
-* @s: input string
-* Return: no return
+* rev_string - rev string
+* @s: string
 */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
-	int count = 0;
+	char *t = s;
+	char n[1000];
+	short c = 0;
 
 	while (*s != '\0')
 	{
+		n[c] = *s;
 		s++;
-		count++;
+		c++;
 	}
+	c = 0;
 
-	while (count > 0)
+	while (s > t)
 	{
 		s--;
-		_putchar(*s);
-		count--;
+		*s = n[c];
+		c++;
 	}
-	_putchar('\n');
 }
